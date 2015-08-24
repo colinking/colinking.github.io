@@ -7,7 +7,7 @@
 		width: 95%
 		margin: 20px auto
 		background-color: $color-bg-alt
-		border: 3px solid $color-border
+		border: $project-border-width solid $color-border
 		height: $project-height
 		.project-content
 			position: absolute
@@ -37,4 +37,10 @@
 				p
 					margin: 0
 					padding: 0
+		.project-image
+			height: $project-height
+			background-size: auto ($project-height - 2 * $project-border-width + 1px) !important
+			position: relative // For z-index
+			z-index: 1000 // Push to top
+
 
