@@ -38,9 +38,12 @@
 					margin: 0
 					padding: 0
 		.project-image
-			height: $project-height
-			background-size: auto ($project-height - 2 * $project-border-width + 1px) !important
 			position: relative // For z-index
 			z-index: 1000 // Push to top
+			.image-wrapper
+				.image
+					height: $project-height
+					background-size: auto ($project-height - 2 * $project-border-width + 1px) !important
+
 
 
