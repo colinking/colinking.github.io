@@ -1,0 +1,40 @@
+
+@import variables
+
+#projects
+	.project
+		position: relative
+		width: 95%
+		margin: 20px auto
+		background-color: $color-bg-alt
+		border: 3px solid $color-border
+		height: $project-height
+		.project-content
+			position: absolute
+			right: 0
+			width: 70%
+			height: $project-height
+			text-align: right
+
+			.project-title
+				h3
+					margin: 0
+					padding: 0
+			.project-tags
+				padding: 5px
+				.tag
+					display: inline-block
+					border-radius: 7px
+					margin-left: 5px
+					margin-top: 5px
+					padding: $tag-pheight $tag-pwidth $tag-pheight $tag-pwidth
+					color: $tag-color-light
+					&.dark
+						color: $tag-color-dark
+					span
+						font-size: $tag-font-size
+			.project-text
+				p
+					margin: 0
+					padding: 0
+
