@@ -14,4 +14,6 @@ block content
 								span #{tagdata[tag].text}
 					.project-text
 						p #{project.text}
-				.project-image(style="background: url(img/#{project.image}) no-repeat top left")
+				.project-image
+					.image-wrapper
+						.image(style="background: url(img/#{project.image}) no-repeat top left")

@@ -1,10 +1,12 @@
 
 @import variables
+@import mixins
 
 #projects
 	.project
 		position: relative
 		width: 95%
+		max-width: 700px
 		margin: 20px auto
 		background-color: $color-bg-alt
 		border: $project-border-width solid $color-border
@@ -40,10 +42,19 @@
 		.project-image
 			position: relative // For z-index
 			z-index: 1000 // Push to top
+			height: ($project-height - 2 * $project-border-width + 1px)
+			width: $project-width
+			overflow: hidden
 			.image-wrapper
+				height: ($project-height - 2 * $project-border-width + 0.5px)
+				overflow: hidden
+				//+transform(-$image-divider-rot)
 				.image
-					height: $project-height
-					background-size: auto ($project-height - 2 * $project-border-width + 1px) !important
+					height: 100%
+					width: 100%
+					background-size: cover !important
+					//+transform($image-divider-rot)
+					background-position: center center; 
 
 
 
