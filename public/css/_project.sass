@@ -44,16 +44,15 @@
 .project-image
 	position: relative // For z-index
 	z-index: 1000 // Push to top
-	height: $project-height//($project-height - 2 * $project-border-width + 0.5px)
+	height: ($project-height - 2 * $project-border-width + 0.5px)
 	width: $project-width
 	overflow: hidden
 	.image-wrapper
-		height: 200% //($project-height - 2 * $project-border-width + 0.5px)
-		width: 200%
+		height: 205% //($project-height - 2 * $project-border-width + 0.5px)
+		width: 205%
 		overflow: hidden
 		position: relative
 		border: $project-border-width $project-border-style $color-border
-		+transform(translate(-50%, -50%) translate(-$project-border-width, -$project-border-width))// rotate(-#{$image-divider-rot}deg))
 		//+transform(translate(0, -$project-height / 3) rotate(-#{$image-divider-rot}deg) translate(0, -$project-height * 2 / 3))
 		.image
 			height: 50%
@@ -67,6 +66,37 @@
 			//+transform(rotate(#{$image-divider-rot}deg) translate(0, 100%))
 			// +transform(translate(0, $project-height * 2 / 3) rotate(#{$image-divider-rot}deg) translate(0, $project-height / 3))
 			//background-position: center center; 
+
+.project
+	@media screen and (min-width: $screen-sm)
+		$image-offset-opened: 10%
+		$image-offset-closed: 35%
+		@keyframes image-anim
+			0%
+				+transform(translate(0, -$image-offset-opened) rotate(#{$image-divider-rot}deg) translate(-$image-offset-opened / 4, $image-offset-opened))
+			100%
+				+transform(translate(0, -$image-offset-closed) rotate(#{$image-divider-rot}deg) translate(-$image-offset-closed / 4, $image-offset-closed))
+		@keyframes wrapper-anim
+			0%
+				+transform(translate(-50%, -50%) translate(-$project-border-width, -$project-border-width) rotate(-#{$image-divider-rot}deg) translate(0, $image-offset-opened))
+			100%
+				+transform(translate(-50%, -50%) translate(-$project-border-width, -$project-border-width) rotate(-#{$image-divider-rot}deg) translate(0, $image-offset-closed))
+
+		.image-wrapper:hover
+			animation-name: wrapper-anim
+			animation-duration: 1s
+		.image-wrapper:hover .image
+			animation-name: image-anim
+			animation-duration: 1s
+
+		.image-wrapper
+			animation-name: wrapper-anim
+			animation-duration: 1s
+		.image-wrapper .image
+			animation-name: image-anim
+			animation-duration: 1s
+
+
 
 
 
