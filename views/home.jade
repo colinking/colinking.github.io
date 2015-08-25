@@ -4,16 +4,17 @@ extends layout
 block content
 	#projects
 		for project in projects.data
-			.project
-				.project-content
-					.project-title
-						h3 #{project.title}
-					.project-tags
-						for tag in project.tags
-							div.tag(style="background-color:#{tagdata[tag].color}" class=tagdata[tag].darktext != undefined ? 'dark': '')
-								span #{tagdata[tag].text}
-					.project-text
-						p #{project.text}
-				.project-image
-					.image-wrapper
-						.image(style="background: url(img/#{project.image}) no-repeat top left")
+			if !project.hide
+				.project
+					.project-content
+						.project-title
+							h3 #{project.title}
+						.project-tags
+							for tag in project.tags
+								div.tag(style="background-color:#{tagdata[tag].color}" class=tagdata[tag].darktext != undefined ? 'dark': '')
+									span #{tagdata[tag].text}
+						.project-text
+							p #{project.text}
+					.project-image
+						.image-wrapper
+							.image(style="background-image: url(img/#{project.image})")

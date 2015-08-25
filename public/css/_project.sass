@@ -5,11 +5,10 @@
 #projects
 	.project
 		position: relative
-		width: 95%
-		max-width: 700px
+		max-width: $project-width-max
 		margin: 20px auto
 		background-color: $color-bg-alt
-		border: $project-border-width solid $color-border
+		border: $project-border-width $project-border-style $color-border
 		height: $project-height
 		.project-content
 			position: absolute
@@ -39,23 +38,35 @@
 				p
 					margin: 0
 					padding: 0
-		.project-image
-			position: relative // For z-index
-			z-index: 1000 // Push to top
-			height: ($project-height - 2 * $project-border-width + 0.5px)
-			width: $project-width
-			overflow: hidden
-			.image-wrapper
-				height: $project-height + 200px //($project-height - 2 * $project-border-width + 0.5px)
-				overflow: hidden
-				border: $project-border-width solid $color-border
-				+transform(translate(0, -100px) rotate(-#{$image-divider-rot}deg) translate(0, -200px))
-				.image
-					height: 100%
-					width: 100%
-					background-size: 100% auto !important
-					+transform(translate(0, 200px) rotate(#{$image-divider-rot}deg) translate(0, 100px))
-					background-position: center center; 
+
+
+
+.project-image
+	position: relative // For z-index
+	z-index: 1000 // Push to top
+	height: $project-height//($project-height - 2 * $project-border-width + 0.5px)
+	width: $project-width
+	overflow: hidden
+	.image-wrapper
+		height: 200% //($project-height - 2 * $project-border-width + 0.5px)
+		width: 200%
+		overflow: hidden
+		position: relative
+		border: $project-border-width $project-border-style $color-border
+		+transform(translate(-50%, -50%) translate(-$project-border-width, -$project-border-width))// rotate(-#{$image-divider-rot}deg))
+		//+transform(translate(0, -$project-height / 3) rotate(-#{$image-divider-rot}deg) translate(0, -$project-height * 2 / 3))
+		.image
+			height: 50%
+			width: 50%
+			position: absolute
+			bottom: 0
+			right: 0
+			background-size: cover !important
+			background-repeat: no-repeat
+			background-position: center center
+			//+transform(rotate(#{$image-divider-rot}deg) translate(0, 100%))
+			// +transform(translate(0, $project-height * 2 / 3) rotate(#{$image-divider-rot}deg) translate(0, $project-height / 3))
+			//background-position: center center; 
 
 
 
