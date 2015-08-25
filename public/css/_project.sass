@@ -42,19 +42,30 @@
 		.project-image
 			position: relative // For z-index
 			z-index: 1000 // Push to top
-			height: ($project-height - 2 * $project-border-width + 1px)
+			height: ($project-height - 2 * $project-border-width + 0.5px)
 			width: $project-width
 			overflow: hidden
 			.image-wrapper
-				height: ($project-height - 2 * $project-border-width + 0.5px)
+				height: $project-height + 200px //($project-height - 2 * $project-border-width + 0.5px)
 				overflow: hidden
-				//+transform(-$image-divider-rot)
+				border: $project-border-width solid $color-border
+				+transform(translate(0, -100px) rotate(-#{$image-divider-rot}deg) translate(0, -200px))
 				.image
 					height: 100%
 					width: 100%
-					background-size: cover !important
-					//+transform($image-divider-rot)
+					background-size: 100% auto !important
+					+transform(translate(0, 200px) rotate(#{$image-divider-rot}deg) translate(0, 100px))
 					background-position: center center; 
+
+
+
+
+
+
+
+
+
+
 
 
 
