@@ -17,11 +17,13 @@
 		#links {
 			background-color: $primary-text-color;
 			border-radius: $links-height / 2;
+			min-height: $links-height;
 			min-width: 0;
 			.link {
 				cursor: default;
 				display: inline-block;
 				padding: 10px 15px;
+				margin: 5px 0px;
 				svg {
 					display: block;
 					margin: auto;
@@ -41,9 +43,8 @@
 			}
 			.logo-strava, .logo-linkedin {
 				svg {
-					height: 25px;
-					// todo: media tag
-					margin-top: 2.5px;
+					padding-top: 2.5px;
+					padding-bottom: 2.5px;
 				}
 			}
 		}

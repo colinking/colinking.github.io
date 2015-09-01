@@ -52,6 +52,7 @@ body {
 		border: $project-border;
 		height: $project-height;
 		.project-content {
+			padding: 10px;
 			@include transition(all 0.1s ease-in-out);
   			@include content-blur($content-blur);
 			position: absolute;
