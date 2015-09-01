@@ -72,8 +72,7 @@
   );
 }
 
-@mixin set-project-widths($project-width, $image-width) {
-	$project-content-width: $project-width - $image-width; //100% - $project-width + 30%;
+@mixin set-project-widths($project-width, $image-width, $project-content-width) {
 	.project {
 		width: $project-width;
 		.project-content {
@@ -91,23 +90,36 @@
 	}
 }
 
+@mixin content-blur($blur) {
+	filter: blur($blur);
+	-webkit-filter: (blur($blur));
+}
+
 @mixin project-transforms($image-offset-opened, $image-offset-closed, $x, $y, $image-width) {
-  .project {
-	.image-wrapper {
-		@include transition($project-transition);
-		@include image-wrapper-transform($image-offset-closed, $image-width);
-		.image {
-		@include transition($project-transition);
-		@include image-transform-2($image-offset-closed, $x, $y);
-	  }
-	}
-  }
-  .project-outer:hover {
-	.image-wrapper {
-		@include image-wrapper-transform($image-offset-opened, $image-width);
-		.image {
-			@include image-transform-2($image-offset-opened, $x, $y);
+	.project {
+		.image-wrapper {
+			@include transition($project-transition);
+			@include image-wrapper-transform($image-offset-closed, $image-width);
+			.image {
+				@include transition($project-transition);
+				@include image-transform-2($image-offset-closed, $x, $y);
+			}
 		}
 	}
-  }
+	.project-outer:hover {
+		.project-content {
+			@include content-blur(0);
+		}
+		.image-wrapper {
+			@include image-wrapper-transform($image-offset-opened, $image-width);
+			.image {
+				@include image-transform-2($image-offset-opened, $x, $y);
+				&:before {
+					background: rgba(0,0,0, 0.6);
+				}
+			}
+		}
+  	}
 }
+
+

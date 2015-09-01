@@ -15,7 +15,7 @@ body {
 	@media screen and (min-width: $break-xs) and (max-width: $break-sm) {
 		$image-width: 250px;
 		$project-width: 300px;
-		@include set-project-widths($project-width, $image-width);
+		@include set-project-widths($project-width, $image-width, 400px);
 		@include project-transforms(0, 100px, 0px, 0px, $image-width);
 		// Change to cards?
 	}
@@ -23,21 +23,21 @@ body {
 	@media screen and (min-width: $break-sm) and (max-width: $break-md) {
 		$image-width: 250px;
 		$project-width: 500px;
-		@include set-project-widths($project-width, $image-width);
+		@include set-project-widths($project-width, $image-width, 400px);
 		@include project-transforms(0, 100px, 92px, -39px, $image-width);
 	}
 
 	@media screen and (min-width: $break-md) and (max-width: $break-lg) {
 		$image-width: 600px;
 		$project-width: 700px;
-		@include set-project-widths($project-width, $image-width);
-		@include project-transforms(-300px, -50px, 26px, -54px, $image-width);
+		@include set-project-widths($project-width, $image-width, 400px);
+		@include project-transforms(-300px, -50px, 26px, -57px, $image-width);
 	}
 
 	@media screen and (min-width: $break-lg) {
 		$image-width: 250px;
 		$project-width: 900px;
-		@include set-project-widths($project-width, $image-width);
+		@include set-project-widths($project-width, $image-width, 400px);
 		@include project-transforms(0, 100px, 92px, -39px, $image-width);
 	}
 
@@ -52,6 +52,8 @@ body {
 		border: $project-border;
 		height: $project-height;
 		.project-content {
+			@include transition(all 0.1s ease-in-out);
+  			@include content-blur($content-blur);
 			position: absolute;
 			right: 0;
 			height: $project-height;
@@ -60,6 +62,7 @@ body {
 				h3 {
 					margin: 0;
 					padding: 0;
+					color: $primary-text-color;
 				}
 			}
 			.project-tags {
@@ -70,9 +73,9 @@ body {
 					margin-left: 5px;
 					margin-top: 5px;
 					padding: $tag-pheight $tag-pwidth $tag-pheight $tag-pwidth;
-					color: $tag-color-light;
+					color: $primary-border-color;
 					&.dark {
-						color: $tag-color-dark;
+						color: $primary-text-color;
 					}
 					span {
 						font-size: $tag-font-size;
@@ -83,6 +86,7 @@ body {
 				p {
 					margin: 0;
 					padding: 0;
+					color: $primary-text-color;
 				}
 			}
 		}
@@ -108,7 +112,21 @@ body {
 			background-size: cover !important;
 			background-repeat: no-repeat;
 			//background-position: 0px -20px;
+
+			// From CSS Tricks for Image Tinting
+			&:before {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background: none;
+				transition: all .3s linear;
+			}
 		}
 	}
 }
+
 

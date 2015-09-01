@@ -68,6 +68,7 @@ app.use(function(req, res, next) {
 	res.locals.name = "Colin King";
   res.locals.tagdata = settings.tagdata;
   res.locals.projects = settings.projects;
+  res.locals.links = settings.links;
 	next();
 });
 

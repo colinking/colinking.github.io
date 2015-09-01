@@ -1,6 +1,10 @@
 
 block header
 	#header
-		h1 #{name}
-		#links
-			
+		#header-box
+			#header-text
+				h1 #{name}
+			#links.grid
+				for link in links
+					a.link.col-1-5(class="logo-#{link.name}" href="#{link.link}" data-tip="#{link.formatted_name}")!= link.code
+						

@@ -1,16 +1,52 @@
 @import "variables";
+@import "mixins";
 
 #header {
-  background-color: $primary-bg-color;
-  height: $header-height;
-  h1 {
-    margin-top: 0;
-    text-align: center;
-    line-height: $header-height;
-    color: $primary-text-color;
-  }
-  h3 {
-    text-align: center;
-    // color: $color-text-small;
-  }
+	background-color: $primary-bg-color;
+	height: $header-height;
+	display: inline-flex;
+	width: 100%;
+	#header-box {
+		height: 150px;
+		margin: auto;
+		h1 {
+			margin-top: 0;
+			text-align: center;
+			color: $primary-text-color;
+		}
+		#links {
+			background-color: $primary-text-color;
+			border-radius: $links-height / 2;
+			width: $links-width;
+			min-width: 0;
+			.link {
+				cursor: default;
+				display: inline-block;
+				padding: 10px 15px;
+				svg {
+					display: block;
+					margin: auto;
+					cursor: pointer;
+					height: 30px;
+					width: 30px;
+					path {
+						@include transition($project-transition);
+						fill: rgba(255, 224, 220, 0.7);
+					}
+				}
+				svg:hover {
+					path {
+						fill: $primary-border-color;
+					}
+				}
+			}
+			.logo-strava, .logo-linkedin {
+				svg {
+					height: 25px;
+					margin-top: 2.5px;
+				}
+			}
+		}
+	}
 }
+
