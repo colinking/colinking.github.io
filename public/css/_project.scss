@@ -11,35 +11,35 @@ body {
 	padding-bottom: 20px;
 	background-color: $primary-text-color;
 
+	// TODO: 0px min until card design implementation for mobile
 	// Breakpoints for project width
-	@media screen and (min-width: $break-xs) and (max-width: $break-sm) {
-		$image-width: 250px;
-		$project-width: 300px;
+	@media screen and (min-width: 0) and (max-width: $break-sm) {
+		$image-width: 300px;
+		$project-width: 450px;
 		@include set-project-widths($project-width, $image-width, 400px);
-		@include project-transforms(0, 100px, 0px, 0px, $image-width);
-		// Change to cards?
+		@include project-transforms(-250px, -5px, 30px, -31px, $image-width);
 	}
 
 	@media screen and (min-width: $break-sm) and (max-width: $break-md) {
-		$image-width: 250px;
-		$project-width: 500px;
+		$image-width: 500px;
+		$project-width: 700px;
 		@include set-project-widths($project-width, $image-width, 400px);
-		@include project-transforms(0, 100px, 92px, -39px, $image-width);
+		@include project-transforms(-200px, -10px, 32px, -49px, $image-width);
 	}
 
-	@media screen and (min-width: $break-md) and (max-width: $break-lg) {
+	@media screen and (min-width: $break-md) {
 		$image-width: 600px;
 		$project-width: 700px;
 		@include set-project-widths($project-width, $image-width, 400px);
 		@include project-transforms(-300px, -50px, 26px, -57px, $image-width);
 	}
 
-	@media screen and (min-width: $break-lg) {
-		$image-width: 250px;
-		$project-width: 900px;
-		@include set-project-widths($project-width, $image-width, 400px);
-		@include project-transforms(0, 100px, 92px, -39px, $image-width);
-	}
+	// @media screen and (min-width: $break-lg) {
+	// 	$image-width: 250px;
+	// 	$project-width: 900px;
+	// 	@include set-project-widths($project-width, $image-width, 400px);
+	// 	@include project-transforms(0, 100px, 92px, -39px, $image-width);
+	// }
 
 	.project-outer {
 		width: 100%;

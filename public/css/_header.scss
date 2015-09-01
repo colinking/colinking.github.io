@@ -17,7 +17,6 @@
 		#links {
 			background-color: $primary-text-color;
 			border-radius: $links-height / 2;
-			width: $links-width;
 			min-width: 0;
 			.link {
 				cursor: default;
@@ -43,6 +42,7 @@
 			.logo-strava, .logo-linkedin {
 				svg {
 					height: 25px;
+					// todo: media tag
 					margin-top: 2.5px;
 				}
 			}
