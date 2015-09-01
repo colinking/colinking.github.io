@@ -1,0 +1,16 @@
+@import "variables";
+
+#header {
+  background-color: $primary-bg-color;
+  height: $header-height;
+  h1 {
+    margin-top: 0;
+    text-align: center;
+    line-height: $header-height;
+    color: $primary-text-color;
+  }
+  h3 {
+    text-align: center;
+    // color: $color-text-small;
+  }
+}

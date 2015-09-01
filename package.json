@@ -10,6 +10,7 @@
     "errorhandler": "^1.4.2",
     "express": "^4.13.3",
     "express-session": "^1.11.3",
+    "gulp": "^3.9.0",
     "jade": "^1.11.0",
     "lusca": "^1.3.0",
     "morgan": "^1.6.1",

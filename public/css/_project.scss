@@ -1,0 +1,114 @@
+@import "variables";
+@import "mixins";
+@import "functions";
+
+body {
+	background-color: $primary-bg-color;
+}
+
+#projects {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: $primary-text-color;
+
+	// Breakpoints for project width
+	@media screen and (min-width: $break-xs) and (max-width: $break-sm) {
+		$image-width: 250px;
+		$project-width: 300px;
+		@include set-project-widths($project-width, $image-width);
+		@include project-transforms(0, 100px, 0px, 0px, $image-width);
+		// Change to cards?
+	}
+
+	@media screen and (min-width: $break-sm) and (max-width: $break-md) {
+		$image-width: 250px;
+		$project-width: 500px;
+		@include set-project-widths($project-width, $image-width);
+		@include project-transforms(0, 100px, 92px, -39px, $image-width);
+	}
+
+	@media screen and (min-width: $break-md) and (max-width: $break-lg) {
+		$image-width: 600px;
+		$project-width: 700px;
+		@include set-project-widths($project-width, $image-width);
+		@include project-transforms(-300px, -50px, 26px, -54px, $image-width);
+	}
+
+	@media screen and (min-width: $break-lg) {
+		$image-width: 250px;
+		$project-width: 900px;
+		@include set-project-widths($project-width, $image-width);
+		@include project-transforms(0, 100px, 92px, -39px, $image-width);
+	}
+
+	.project-outer {
+		width: 100%;
+	}
+
+	.project {
+		position: relative;
+		margin: 20px auto;
+		background-color: $project-bg-color;
+		border: $project-border;
+		height: $project-height;
+		.project-content {
+			position: absolute;
+			right: 0;
+			height: $project-height;
+			text-align: right;
+			.project-title {
+				h3 {
+					margin: 0;
+					padding: 0;
+				}
+			}
+			.project-tags {
+				padding: 5px;
+				.tag {
+					display: inline-block;
+					border-radius: 7px;
+					margin-left: 5px;
+					margin-top: 5px;
+					padding: $tag-pheight $tag-pwidth $tag-pheight $tag-pwidth;
+					color: $tag-color-light;
+					&.dark {
+						color: $tag-color-dark;
+					}
+					span {
+						font-size: $tag-font-size;
+					}
+				}
+			}
+			.project-text {
+				p {
+					margin: 0;
+					padding: 0;
+				}
+			}
+		}
+	}
+
+	.project-image {
+		position: relative;
+		z-index: 1000;
+		height: image-height();
+		overflow: hidden;
+		.image-wrapper {
+			//border: 4px solid red;
+			height: 2 * $project-height;
+			overflow: hidden;
+			position: relative;
+			border: $project-border;
+		}
+		.image {
+			height: image-height();
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			background-size: cover !important;
+			background-repeat: no-repeat;
+			//background-position: 0px -20px;
+		}
+	}
+}
+
