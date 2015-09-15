@@ -46,11 +46,14 @@ body {
 	}
 
 	.project {
+		border-radius: 10px;
 		position: relative;
 		margin: 20px auto;
+		z-index: 1001;
 		background-color: $project-bg-color;
 		border: $project-border;
 		height: $project-height;
+		overflow: hidden;
 		.project-content {
 			padding: 10px;
 			@include transition(all 0.1s ease-in-out);

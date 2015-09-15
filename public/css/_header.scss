@@ -41,11 +41,18 @@
 					}
 				}
 			}
-			.logo-strava, .logo-linkedin {
+			.logo-strava, .logo-linkedin, .logo-resume {
 				svg {
-					padding-top: 2.5px;
-					padding-bottom: 2.5px;
+					padding-top: 1.5px;
+					padding-bottom: 1.5px;
 				}
+			}
+			$edge-offset: 20px;
+			.logo-resume {
+				padding-left: $edge-offset;
+			}
+			.logo-strava {
+				padding-right: $edge-offset;
 			}
 		}
 	}
