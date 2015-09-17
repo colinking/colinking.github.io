@@ -22,6 +22,7 @@
 
 \documentclass{resume} % Use the custom resume.cls style
 
+\usepackage{multicol}
 \usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
 
 \name{Colin King} % Your name
@@ -50,12 +51,12 @@ Advanced Cybersecurity Experience for Students (ACES) Honors Living and Learning
 
 \begin{rSubsection}{Gallup, Inc.}{February 2015 - Present}{Growth Hacker and System Application Developer Intern}{Washington, DC/Omaha, NE}
 \item Developed the StrengthsFinder Analytics Platform from the ground up in .NET; used by sales teams across Gallup.
-\item Designed a custom search engine used across Gallup's sites, performed sales metrics analysis in Python, contributed to the development of a lead scoring algorithm using machine learning.
+\item Developed a bucketed DICE search algorithm used on multiple Gallup sites; Contributed to machine-learning algorithm for lead scoring; Analyzed metrics to improve sales efficiency using Python.
 \end{rSubsection}
 
-\begin{rSubsection}{Project Delta (Not-for-Profit Startup)}{February 2015 - Present}{Co-Founder and Software Architect}{College Park, MD}
-\item Mentor student teams through the product development cycle to develop impact-driven projects.
-\item Current partners include the Peace Corps, Solidarity Center, and LocaLove Philippines.
+\begin{rSubsection}{Project Delta}{February 2015 - Present}{Co-Founder and Project Manager}{College Park, MD}
+\item Fostered connections between not-for-profit clients and student teams to develop technological solutions.
+\item Current clients include the Peace Corps, Solidarity Center, and LocaLove Philippines.
 \end{rSubsection}
 
 %------------------------------------------------
@@ -72,16 +73,19 @@ Advanced Cybersecurity Experience for Students (ACES) Honors Living and Learning
 
 \begin{rHonorsSection}{Honors and Awards}
 \item KPCB Fellows Program Semifinalist 2015
-\item 2nd Place, Best Use of Twilio at MHacks VI (1000+ Person Hackathon)
 \item President's Scholarship - Four Year Merit-based Scholarship
 \item Gannon Portal Award - Academic Excellence Award for Computer Science
-\item 1st Place at University of Pennsylvania's Social Change Hackathon (Hack the Change)
-\item 3rd Place and Build for Good Challenge Winner at University of Cincinnati's Hackathon (RevolutionUC)
-\item Best Use of Intel Edison Developer Boards at PennApps XI (UPenn's Major League Hackathon)
-\item Best Use of MongoDB, Best Sustainable App at HackRU 2015 (Hackathon at Rutgers University)
-\item Best Use of AWS at Hack the Planet (Invite only MLH-hosted Hackathon)
-\item Best Use of IBM Bluemix at PennApps XII (World's Largest Collegiate Hackathon)
-\item 2nd Place at the Maryland Cyber Challenge Cybersecurity Competition
+\setlength\itemsep{0em}
+\item 2nd Place, Best Use of Twilio at MHacks VI (Out of 276 Projects)
+\setlength\itemsep{-0.4em}
+\item 1st Place at University of Pennsylvania's Social Change Hackathon
+\item 3rd Place, Build for Good Challenge Winner at University of Cincinnati's Hackathon
+\item Best Use of AWS at Major League Hackathon's First Annual Hackathon
+\item Best Use of IBM Bluemix at PennApps XII
+\item Best Use of Intel Edison Developer Boards at PennApps XI
+\item Best Use of MongoDB, Best Sustainable App at Rutgers University's Hackathon
+%\setlength\itemsep{0em}
+%\item 2nd Place at the Maryland Cyber Challenge Cybersecurity Competition
 %\item Fastest Solver of Problem 3 at the 2013 University of Maryland Java Programming Competition
 
 \end{rHonorsSection}
@@ -92,20 +96,20 @@ Advanced Cybersecurity Experience for Students (ACES) Honors Living and Learning
 
 \begin{rSection}{Selected Projects}
 
-\begin{rSubsection}{"Smartify": Cloud-Based App Platform}{September 2015}{Node.js, Express, Firebase, Jade, SASS, Python, Twilio, Microsoft Azure}{}
-\item Built a Web-based IDE/App Store for developing cloud applications which are accessed via SMS, MMS or Voice. 
+\begin{rSubsection}{``Smartify'': SMS App Platform}{September 2015}{Node.js, Express, Firebase, Jade, SASS, Python, Twilio, Microsoft Azure}{}
+\item Developed platform to run internet applications in Azure and access via SMS; built web IDE for app development.
 \end{rSubsection}
 
-\begin{rSubsection}{"Haptic Web Developer": Draw Web Applications with the Sensel Trackpad}{August 2015}{Python, Tkinter,  Amazon Web Services (AWS), Sendgrid}{}
+\begin{rSubsection}{Honeypot Malicious Data Collector \textit{(Foundations in Cybersecurity II)}}{March 2015 - May 2015}{BASH, Ubuntu Linux, OpenVZ, P0f, Nagios, MongoDB, R}{}
+\item Led a team of five to develop a machine learning algorithm by analyzing network traffic data.
+\end{rSubsection}
+
+\begin{rSubsection}{``Haptic Web Developer'': Draw Web Applications with the Sensel Trackpad}{August 2015}{Python, Tkinter,  Amazon Web Services (AWS), Sendgrid}{}
 \item Built a custom gesture recognition framework and Python app for drawing web sites and deploying to AWS.
 \end{rSubsection}
 
-\begin{rSubsection}{Honeypot Malicious Data Collector}{March 2015 - May 2015}{BASH, Ubuntu Linux, OpenVZ, P0f, Nagios, MongoDB, R}{}
-\item Led a team of five to construct a network to gather data on network traffic to develop a machine-learning algorithm.
-\end{rSubsection}
-
-\begin{rSubsection}{"SmartCan": Incentivized Recycling System}{January 2015}{Google Glass, Intel Edison, Swift, Venmo, MongoDB, Node.js, Jade}{}
-\item Built a custom trashcan to sort trash using QR codes and incentivize users to improve the knowledge database.
+\begin{rSubsection}{``SmartCan'': Incentivized Recycling System}{January 2015}{Google Glass, Intel Edison, Swift, Venmo, MongoDB, Node.js, Jade}{}
+\item Programmed a Google Glass to analyze barcodes and trigger a laser-printed trashcan to sort recycling from trash.
 \end{rSubsection}
 
 \end{rSection}
@@ -117,9 +121,9 @@ Advanced Cybersecurity Experience for Students (ACES) Honors Living and Learning
 \begin{rSection}{Skills and Activites}
 
 \begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
-Computer Languages & Node.js/JavaScript, C\#, Python, Java, BASH, Swift, R, Objective-C \\
+Computer Languages & \textit{Advanced:} Node.js, C\#, Java; \textit{Proficient:} Python, BASH; \textit{Basic:} R, Objective-C \\
 Activities & Cybersecurity Competition Team, Hackathon Organizer (Bitcamp 2014 - 2015), \\
- & Startup Shell Member, Terp Runners, Terrapin Hackers
+ & Startup Shell Member, Terrapin Hackers, Terp Runners
 \end{tabular}
 
 \end{rSection}
