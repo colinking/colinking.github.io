@@ -64,6 +64,6 @@
 
 // Project Image Based mixins
 @function image-height {
-  //height: $project-height - 2 * $project-border-width + 0.5px;}
-  @return $project-height - $project-border-width;
+	//height: $project-height - 2 * $project-border-width + 0.5px;}
+	@return $project-height - $project-border-width;
 }

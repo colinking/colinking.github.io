@@ -1,0 +1,13 @@
+{
+  "assets": {
+    "_footer.css": "_footer-24ce3572d6ac72c18fe550bdcb62ca9e.css"
+  },
+  "files": {
+    "_footer-24ce3572d6ac72c18fe550bdcb62ca9e.css": {
+      "logical_path": "_footer.css",
+      "mtime": "2015-10-02T01:24:16.000Z",
+      "size": 553,
+      "digest": "24ce3572d6ac72c18fe550bdcb62ca9e"
+    }
+  }
+}
