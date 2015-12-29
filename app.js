@@ -51,6 +51,7 @@ app.use(session({
 	secret: secrets.sessionSecret
 }));
 app.use(lusca({
+	csrf: true,
 	xframe: 'SAMEORIGIN',
 	xssProtection: true
 }));
@@ -70,14 +71,11 @@ app.use(function(req, res, next) {
 /**
  * Primary app routes.
  */
+// Load the home page
 app.get('/', function(req, res) {
 	res.render('home', {
 		title: 'Home'
 	});
-});
-app.post('/deploy', function(req, res) {
-	console.log("deployment triggered!");
-	console.log(req.body);
 });
 
 /**
