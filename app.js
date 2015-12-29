@@ -74,7 +74,7 @@ app.use(function(req, res, next) {
 // Load the home page
 app.get('/', function(req, res) {
 	res.render('home', {
-		title: 'Home'
+		title: 'Home - Colin King'
 	});
 });
 
