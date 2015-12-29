@@ -17,11 +17,6 @@ var assets = require('connect-assets');
 var sass = require('node-sass');
 
 /**
- * Controllers (route handlers).
- */
-var homeController = require('./controllers/home');
-
-/**
  * API keys.
  */
 var secrets = require('./config/secrets.conf');
@@ -44,21 +39,21 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(compress());
 app.use(assets({
-  paths: ['public/css', 'public/js']
+	paths: ['public/css', 'public/js']
 }));
 app.use(logger('dev'));
 //app.use(favicon(path.join(__dirname, 'public/favicon.png')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
-  resave: true,
-  saveUninitialized: true,
-  secret: secrets.sessionSecret
+	resave: true,
+	saveUninitialized: true,
+	secret: secrets.sessionSecret
 }));
 app.use(lusca({
-  csrf: true,
-  xframe: 'SAMEORIGIN',
-  xssProtection: true
+	csrf: true,
+	xframe: 'SAMEORIGIN',
+	xssProtection: true
 }));
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
@@ -67,16 +62,24 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
  */
 app.use(function(req, res, next) {
 	res.locals.name = "Colin King";
-  res.locals.tagdata = settings.tagdata;
-  res.locals.projects = settings.projects;
-  res.locals.links = settings.links;
+	res.locals.tagdata = settings.tagdata;
+	res.locals.projects = settings.projects;
+	res.locals.links = settings.links;
 	next();
 });
 
 /**
  * Primary app routes.
  */
-app.get('/', homeController.index);
+app.get('/', function(req, res) {
+	res.render('home', {
+		title: 'Home'
+	});
+});
+app.post('/deploy', function(req, res) {
+	console.log("deployment triggered!");
+	console.log(req.body);
+});
 
 /**
  * Error Handler.
@@ -87,7 +90,7 @@ app.use(errorHandler());
  * Start Express server.
  */
 app.listen(app.get('port'), function() {
-  console.log('Express server listening on port %d in %s mode', app.get('port'), app.get('env'));
+	console.log('Express server listening on port %d in %s mode', app.get('port'), app.get('env'));
 });
 
 module.exports = app;
