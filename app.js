@@ -61,7 +61,7 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
  * Merge default options into the locals variable.
  */
 app.use(function(req, res, next) {
-	res.locals.name = "Colin King";
+	res.locals.name = "Colin TesterMan King";
 	res.locals.tagdata = settings.tagdata;
 	res.locals.projects = settings.projects;
 	res.locals.links = settings.links;
