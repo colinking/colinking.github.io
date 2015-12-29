@@ -51,7 +51,6 @@ app.use(session({
 	secret: secrets.sessionSecret
 }));
 app.use(lusca({
-	csrf: true,
 	xframe: 'SAMEORIGIN',
 	xssProtection: true
 }));
