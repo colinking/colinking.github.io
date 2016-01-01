@@ -6,16 +6,17 @@ block content
 		for project in projects.data
 			if !project.hide
 				.project-outer
-					.project
-						.project-content
-							.project-title
-								h3 #{project.title}
-							.project-tags
-								for tag in project.tags
-									div.tag(style="background-color:#{tagdata[tag].color}" class=tagdata[tag].darktext != undefined ? 'dark': '')
-										span #{tagdata[tag].text}
-							.project-text
-								p #{project.text}
-						.project-image
-							.image-wrapper
-								.image(style="background-image: url(img/#{project.image})")
+					a(href="#{project.link}")
+						.project
+							.project-content
+								.project-title
+									h3 #{project.title}
+								.project-tags
+									for tag in project.tags
+										div.tag(style="background-color:#{tagdata[tag].color}" class=tagdata[tag].darktext != undefined ? 'dark': '')
+											span #{tagdata[tag].text}
+								.project-text
+									p #{project.text}
+							.project-image
+								.image-wrapper
+									.image(style="background-image: url(img/#{project.image})")
