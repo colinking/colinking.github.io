@@ -13,7 +13,7 @@ block content
 									h3 #{project.title}
 								.project-tags
 									for tag in project.tags
-										div.tag(style="background-color:#{tagdata[tag].color}" class=tagdata[tag].darktext != undefined ? 'dark': '')
+										div.tag(style="background-color:#{tagdata[tag].color}" class=(tagdata[tag].darktext ? 'dark': '') + (tagdata[tag].bordered ? ' bordered' : ''))
 											span #{tagdata[tag].text}
 								.project-text
 									p #{project.text}

@@ -81,6 +81,10 @@ body {
 					&.dark {
 						color: $primary-text-color;
 					}
+					&.bordered {
+						border: 1px solid #555;
+						padding: 0 5px;
+					}
 					span {
 						font-size: $tag-font-size;
 					}
