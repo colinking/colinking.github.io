@@ -77,6 +77,16 @@ app.get('/', function(req, res) {
 		title: 'Home'
 	});
 });
+// Redirect links from resume
+app.get('/offlineeducation', function(req, res) {
+	res.redirect("http://devpost.com/software/pencils-of-promise-mobile-education-hub");
+});
+app.get('/smartify', function(req, res) {
+	res.redirect("http://devpost.com/software/smartify");
+});
+app.get('/smartcan', function(req, res) {
+	res.redirect("http://devpost.com/software/smartcan");
+});
 
 /**
  * Error Handler.
