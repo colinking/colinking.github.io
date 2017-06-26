@@ -1,0 +1,59 @@
+@import 'grid';
+
+body {
+  margin: 100px 15% 0px 15%;
+  #content {
+    // background-color: #eee;
+    font-family: 'Inconsolata', sans-serif;
+    font-size: 30px;
+    max-width: 1000px;
+    margin: auto;
+
+    .row {
+      margin-bottom: 100px;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    #header {
+      height: 300px;
+
+      #image {
+        img {
+          border-radius: 20px;
+          max-height: 300px;
+        }
+      }
+
+      #name {
+        margin-top: 140px;
+        font-weight: 900;
+        text-align: right;
+      }
+
+      @media (min-width: 30em) {
+      	#image { width: 50.0%; }
+      	#name { width: 50.0%; }
+      }
+    }
+
+    #description {
+      font-weight: 400;
+
+      p {
+        margin-bottom: 25px;
+      }
+
+      a {
+        color: #65d091;
+        &:hover {
+          color: #51a774;
+        }
+      }
+    }
+
+    #links {
+
+    }
+  }
+}
