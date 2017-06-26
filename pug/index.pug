@@ -13,31 +13,64 @@ html(lang="en")
 		title= "Colin King"
 		link(href="https://fonts.googleapis.com/css?family=Inconsolata:400,700", rel="stylesheet")
 		link(rel="stylesheet",href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css")
+		link(rel="stylesheet",href="public/twemoji-awesome.css")
 		link(rel="stylesheet",href="public/main.css")
 	body
-		.row#content
-			//- Personal image + name
-			.row#header
-				.col#image
-					img(src="public/colinking.jpg")
-				.col#name
-					p Colin King
-			//- Description
-			.row#description
-				.col
-					p
-						| I’m a 
-						a(href="http://kpcbfellows.com/") KPCB Fellow
-						|  on the infrastructure team at 
-						a(href="https://nextdoor.com/about/") Nextdoor
-						| . Previously at Google on App Engine Search.
-					p
-						| I’m also on the investing team at 
-						a(href="http://contrarycap.com/") Contrary Capital
-						| , where I focus on the University of Maryland community.
-					p
-						| I will be teaching 
-						a(href="https://github.com/UMD-CS-STICs/389Lfall17") CMSC389L
-						|  in Fall 2017 at UMD.
-			//- External Links
-			.row#links
+		.row#content-wrapper
+			.row#content
+				//- Personal image + name
+				.row#header
+					.col#image
+						img(src="public/colinking.jpg")
+					.col#name
+						p Colin King
+				//- Description
+				.row#description
+					.col
+						p
+							| I’m a 
+							a(href="http://kpcbfellows.com/") KPCB Fellow
+							|  on the infrastructure team at 
+							a(href="https://nextdoor.com/about/") Nextdoor
+							| . Previously at Google on App Engine Search.
+						p
+							| I’m also on the investing team at 
+							a(href="http://contrarycap.com/") Contrary Capital
+							| , where I focus on the University of Maryland community.
+						p
+							| I will be teaching 
+							a(href="https://github.com/UMD-CS-STICs/389Lfall17") CMSC389L
+							|  in Fall 2017 at UMD.
+				//- External Links
+				.row#links
+					.row
+						.col
+							p
+								i.twa.twa-books
+								|  
+								a(href="https://www.goodreads.com/user/show/40155956-colin-king") Goodreads
+						.col
+							p
+								i.twa.twa-briefcase
+								|  
+								a(href="https://www.linkedin.com/in/colinking1/") LinkedIn
+						.col
+							p
+								i.twa.twa-computer
+								|  
+								a(href="https://github.com/colinking") GitHub
+						.col
+							p
+								i.twa.twa-bicyclist
+								|  
+								a(href="https://www.strava.com/athletes/9159854") Strava
+						.col
+							p
+								i.twa.twa-page-facing-up
+								|  
+								a(href="https://www.dropbox.com/s/jybjjtvw5ddvlm1/ColinKingResume.pdf?dl=0") Resume
+						.col
+							p
+								i.twa.twa-writing-hand
+								|  
+								a(href="https://medium.com/@colinking") Medium
