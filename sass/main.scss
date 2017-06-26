@@ -5,6 +5,7 @@ $accent-color-dark: #51a774;
 
 body {
   border-top: 5px solid $accent-color;
+
   #content-wrapper {
     margin: 100px 15% 0px 15%;
 
@@ -34,6 +35,10 @@ body {
           margin-top: 140px;
           font-weight: 900;
           text-align: right;
+
+          p {
+            margin: 0;
+          }
         }
 
         @media (min-width: 30em) {
@@ -51,6 +56,7 @@ body {
 
         a {
           color: $accent-color;
+
           &:hover {
             color: $accent-color-dark;
           }
@@ -61,9 +67,6 @@ body {
         font-size: 25px;
         opacity: 0.8;
 
-        &:hover {
-          // cursor: pointer;
-        }
         .col {
           width: 33.33%;
           text-align: center;
