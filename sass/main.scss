@@ -3,6 +3,10 @@
 $accent-color: #65d091;
 $accent-color-dark: #51a774;
 
+$bp-small-to-medium: 425px;
+$bp-medium-to-large: 850px;
+
+// Non-responsive CSS
 body {
   border-top: 5px solid $accent-color;
 
@@ -11,39 +15,21 @@ body {
 
     #content {
       font-family: 'Inconsolata', sans-serif;
-      font-size: 30px;
       max-width: 1000px;
       margin: auto;
+      margin-bottom: 100px;
 
-      .row {
+      .section {
         margin-bottom: 100px;
-        padding-left: 40px;
-        padding-right: 40px;
       }
 
       #header {
-        height: 300px;
-
-        #image {
-          img {
-            border-radius: 20px;
-            max-height: 300px;
-          }
-        }
-
         #name {
-          margin-top: 140px;
           font-weight: 900;
-          text-align: right;
 
           p {
             margin: 0;
           }
-        }
-
-        @media (min-width: 30em) {
-        	#image { width: 50.0%; }
-        	#name { width: 50.0%; }
         }
       }
 
@@ -64,16 +50,120 @@ body {
       }
 
       #links {
-        font-size: 25px;
         opacity: 0.8;
+        text-align: center;
 
-        .col {
-          width: 33.33%;
-          text-align: center;
-        }
         .hidden {
           display: none;
         }
+      }
+    }
+  }
+}
+
+// Responsive CSS
+body #content-wrapper #content {
+  @media (min-width: $bp-medium-to-large + 1px) {
+    font-size: 30px;
+
+    .size-small:not(.size-large),
+    .size-medium:not(.size-large) {
+      display: none;
+    }
+    .row {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    #header {
+      height: 300px;
+
+      #image, #name {
+        width: 50.0%;
+      }
+      #image {
+        img {
+          border-radius: 20px;
+          max-height: 300px;
+        }
+      }
+      #name {
+        margin-top: 140px;
+        width: 50.0%;
+        text-align: right;
+      }
+    }
+    #links {
+      font-size: 25px;
+
+      .col {
+        width: 33.33%;
+      }
+    }
+  }
+  @media (min-width: $bp-small-to-medium + 1px) and (max-width: $bp-medium-to-large) {
+    font-size: 25px;
+
+    .size-small:not(.size-medium),
+    .size-large:not(.size-medium) {
+      display: none;
+    }
+    .row {
+      margin-bottom: 20px;
+    }
+
+    #header {
+      height: 200px;
+
+      #image, #name {
+        text-align: center;
+        width: 100.0%;
+      }
+      #image {
+        img {
+          border-radius: 15px;
+          max-height: 200px;
+        }
+      }
+      #name {
+        margin-top: 30px;
+      }
+    }
+    #links {
+      .col {
+        width: 50.00%;
+      }
+    }
+  }
+  @media (max-width: $bp-small-to-medium) {
+    font-size: 20px;
+    margin-bottom: 0px;
+
+    .size-medium:not(.size-small),
+    .size-large:not(.size-small) {
+      display: none;
+    }
+    .row {
+      margin-bottom: 20px;
+    }
+
+    #header {
+      height: 200px;
+
+      #image, #name {
+        text-align: center;
+        width: 100.0%;
+      }
+      #image {
+        img {
+          border-radius: 15px;
+          max-height: 200px;
+        }
+      }
+    }
+    #links {
+      .col {
+        width: 100.00%;
       }
     }
   }

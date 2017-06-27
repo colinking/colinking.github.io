@@ -1,3 +1,5 @@
+include mixins.pug
+
 doctype html
 html(lang="en")
 	head
@@ -30,20 +32,31 @@ html(lang="en")
 		.row#content-wrapper
 			.row#content
 				//- Personal image + name
-				.row#header
-					.col#image
-						img(src="public/colinking.jpg")
-					.col#name
-						p Colin King
+				.section#header
+					.size-medium.size-large
+						.row
+							.col#image
+								img(src="public/colinking.jpg")
+							.col#name
+								p Colin King
+					.size-small
+						.row
+							.col#image
+								img(src="public/colinking.jpg")
+						.row
+							.col#name
+								p Colin King
 				//- Description
-				.row#description
+				.section.row#description
 					.col
 						p
 							| I’m a 
 							a(href="http://kpcbfellows.com/") KPCB Fellow
 							|  on the infrastructure team at 
 							a(href="https://nextdoor.com/about/") Nextdoor
-							| . Previously at Google on App Engine Search.
+							| . Previously at Google on 
+							a(href="https://cloud.google.com/appengine/training/fts_intro/") App Engine Search
+							| .
 						p
 							| I’m also on the investing team at 
 							a(href="http://contrarycap.com/") Contrary Capital
@@ -53,35 +66,36 @@ html(lang="en")
 							a(href="https://github.com/UMD-CS-STICs/389Lfall17") CMSC389L
 							|  in Fall 2017 at UMD.
 				//- External Links
-				.row#links
-					.row
-						.col
-							p
-								i.twa.twa-books
-								|  
-								a(href="https://www.goodreads.com/user/show/40155956-colin-king") Goodreads
-						.col
-							p
-								i.twa.twa-briefcase
-								|  
-								a(href="https://www.linkedin.com/in/colinking1/") LinkedIn
-						.col
-							p
-								i.twa.twa-computer
-								|  
-								a(href="https://github.com/colinking") GitHub
-						.col
-							p
-								i.twa.twa-bicyclist
-								|  
-								a(href="https://www.strava.com/athletes/9159854") Strava
-						.col
-							p
-								i.twa.twa-page-facing-up
-								|  
-								a(href="https://www.dropbox.com/s/jybjjtvw5ddvlm1/ColinKingResume.pdf?dl=0") Resume
-						.col
-							p
-								i.twa.twa-writing-hand
-								|  
-								a(href="https://medium.com/@colinking") Medium
+				.section#links
+					.size-large
+						.row
+							+goodreads()
+							+linkedin()
+							+github()
+						.row
+							+strava()
+							+resume()
+							+medium()
+					.size-medium
+						.row
+							+goodreads()
+							+linkedin()
+						.row
+							+github()
+							+strava()
+						.row
+							+resume()
+							+medium()
+					.size-small
+						.row
+							+goodreads()
+						.row
+							+linkedin()
+						.row
+							+github()
+						.row
+							+strava()
+						.row
+							+resume()
+						.row
+							+medium()
