@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+	head
+		//- Metadata
+		meta(charset="UTF-8")
+		meta(name="language", content="english")
+		meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+
+		//- HTTP to HTTPS redirection
+		script.
+			var loc = window.location.href;
+			if (loc.indexOf('http://') == 0) {
+				window.location.href = loc.replace('http://','https://');
+			}
+
+		//- Website Metadata
+		title= "Colin King"
+		meta(name="author", content="Colin King")
+		meta(name="keywords", content="software,engineer,computer,science,venture,capital,entrepreneurship,university,maryland")
+		
+		//- Favicons
+		link(rel="apple-touch-icon", sizes="180x180", href="/icons/apple-touch-icon.png")
+		link(rel="icon", type="image/png", sizes="32x32", href="/icons/favicon-32x32.png")
+		link(rel="icon", type="image/png", sizes="16x16", href="/icons/favicon-16x16.png")
+		link(rel="manifest", href="/icons/manifest.json")
+		link(rel="shortcut icon", href="/icons/favicon.ico")
+		meta(name="msapplication-config", content="/icons/browserconfig.xml")
+		meta(name="theme-color", content="#ffffff")
+		
+		block header
+	body
+		

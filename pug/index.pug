@@ -1,108 +1,82 @@
 include _mixins.pug
+include _header.pug
 
-doctype html
-html(lang="en")
-	head
-		//- Metadata
-		meta(charset="UTF-8")
-		meta(name="language", content="english")
-		meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+block header
+	link(rel="canonical", href="https://colinking.co")
 
-		//- HTTP to HTTPS redirection
-		script.
-			var loc = window.location.href;
-			if (loc.indexOf('http://') == 0) {
-				window.location.href = loc.replace('http://','https://');
-			}
+	link(href="https://fonts.googleapis.com/css?family=Inconsolata:400,700", rel="stylesheet")
+	link(rel="stylesheet",href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css")
+	link(rel="stylesheet",href="public/twemoji-awesome.css")
+	link(rel="stylesheet",href="public/main.css")
 
-		//- Website Metadata
-		title= "Colin King"
-		meta(name="author", content="Colin King")
-		meta(name="keywords", content="software,engineer,computer,science,venture,capital,entrepreneurship,university,maryland")
-		link(rel="canonical", href="https://colinking.co")
-		
-		//- Favicons
-		link(rel="apple-touch-icon", sizes="180x180", href="/icons/apple-touch-icon.png")
-		link(rel="icon", type="image/png", sizes="32x32", href="/icons/favicon-32x32.png")
-		link(rel="icon", type="image/png", sizes="16x16", href="/icons/favicon-16x16.png")
-		link(rel="manifest", href="/icons/manifest.json")
-		link(rel="shortcut icon", href="/icons/favicon.ico")
-		meta(name="msapplication-config", content="/icons/browserconfig.xml")
-		meta(name="theme-color", content="#ffffff")
-		
-		//- Stylesheets
-		link(href="https://fonts.googleapis.com/css?family=Inconsolata:400,700", rel="stylesheet")
-		link(rel="stylesheet",href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css")
-		link(rel="stylesheet",href="public/twemoji-awesome.css")
-		link(rel="stylesheet",href="public/main.css")
-	body
-		.row#content-wrapper
-			.row#content
-				//- Personal image + name
-				.section#header
-					.size-medium.size-large
-						.row
-							.col#image
-								img(src="public/colinking.jpg")
-							.col#name
-								p Colin King
-					.size-small
-						.row
-							.col#image
-								img(src="public/colinking.jpg")
-						.row
-							.col#name
-								p Colin King
-				//- Description
-				.section.row#description
-					.col
-						p
-							| I’m a 
-							a(href="http://kpcbfellows.com/") KPCB Fellow
-							|  on the infrastructure team at 
-							a(href="https://nextdoor.com/about/") Nextdoor
-							| . Previously at Google on 
-							a(href="https://cloud.google.com/appengine/training/fts_intro/") App Engine Search
-							| .
-						p
-							| I’m also on the investing team at 
-							a(href="http://contrarycap.com/") Contrary Capital
-							| , where I focus on the University of Maryland community.
-						p
-							| I will be teaching 
-							a(href="https://github.com/UMD-CS-STICs/389Lfall17") CMSC389L
-							|  in Fall 2017 at UMD.
-				//- External Links
-				.section#links
-					.size-large
-						.row
-							+goodreads()
-							+linkedin()
-							+github()
-						.row
-							+strava()
-							+resume()
-							+medium()
-					.size-medium
-						.row
-							+goodreads()
-							+linkedin()
-						.row
-							+github()
-							+strava()
-						.row
-							+resume()
-							+medium()
-					.size-small
-						.row
-							+goodreads()
-						.row
-							+linkedin()
-						.row
-							+github()
-						.row
-							+strava()
-						.row
-							+resume()
-						.row
-							+medium()
+block content
+	.row#content-wrapper
+		.row#content
+			//- Personal image + name
+			.section#header
+				.size-medium.size-large
+					.row
+						.col#image
+							img(src="public/colinking.jpg")
+						.col#name
+							p Colin King
+				.size-small
+					.row
+						.col#image
+							img(src="public/colinking.jpg")
+					.row
+						.col#name
+							p Colin King
+			//- Description
+			.section.row#description
+				.col
+					p
+						| I’m a 
+						a(href="http://kpcbfellows.com/") KPCB Fellow
+						|  on the infrastructure team at 
+						a(href="https://nextdoor.com/about/") Nextdoor
+						| . Previously at Google on 
+						a(href="https://cloud.google.com/appengine/training/fts_intro/") App Engine Search
+						| .
+					p
+						| I’m also on the investing team at 
+						a(href="http://contrarycap.com/") Contrary Capital
+						| , where I focus on the University of Maryland community.
+					p
+						| I will be teaching 
+						a(href="https://github.com/UMD-CS-STICs/389Lfall17") CMSC389L
+						|  in Fall 2017 at UMD.
+			//- External Links
+			.section#links
+				.size-large
+					.row
+						+goodreads()
+						+linkedin()
+						+github()
+					.row
+						+strava()
+						+resume()
+						+medium()
+				.size-medium
+					.row
+						+goodreads()
+						+linkedin()
+					.row
+						+github()
+						+strava()
+					.row
+						+resume()
+						+medium()
+				.size-small
+					.row
+						+goodreads()
+					.row
+						+linkedin()
+					.row
+						+github()
+					.row
+						+strava()
+					.row
+						+resume()
+					.row
+						+medium()
