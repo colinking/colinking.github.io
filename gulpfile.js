@@ -7,7 +7,7 @@ var pug = require('gulp-pug');
 
 // Compile Pug templates to HTML.
 gulp.task('pug', function buildHTML() {
-	return gulp.src('pug/*.pug')
+	return gulp.src(['pug/*.pug', '!pug/_*.pug'])
 	.pipe(pug())
 	.pipe(gulp.dest('.'));
 });
