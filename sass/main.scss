@@ -11,7 +11,7 @@ body {
   border-top: 5px solid $accent-color;
 
   #content-wrapper {
-    margin: 100px 15% 0px 15%;
+    margin: 0 15% 0px 15%;
 
     #content {
       font-family: 'Inconsolata', sans-serif;
@@ -24,6 +24,9 @@ body {
       }
 
       #header {
+        #image img {
+          border: 1px solid #444;
+        }
         #name {
           font-weight: 900;
 
@@ -65,6 +68,7 @@ body {
 body #content-wrapper #content {
   @media (min-width: $bp-medium-to-large + 1px) {
     font-size: 30px;
+    margin-top: 100px;
 
     .size-small:not(.size-large),
     .size-medium:not(.size-large) {
@@ -103,6 +107,7 @@ body #content-wrapper #content {
   }
   @media (min-width: $bp-small-to-medium + 1px) and (max-width: $bp-medium-to-large) {
     font-size: 25px;
+    margin-top: 75px;
 
     .size-small:not(.size-medium),
     .size-large:not(.size-medium) {
@@ -116,8 +121,8 @@ body #content-wrapper #content {
       height: 200px;
 
       #image, #name {
-        text-align: center;
         width: 100.0%;
+        text-align: center;
       }
       #image {
         img {
@@ -127,6 +132,7 @@ body #content-wrapper #content {
       }
       #name {
         margin-top: 30px;
+        text-align: center;
       }
     }
     #links {
@@ -137,6 +143,7 @@ body #content-wrapper #content {
   }
   @media (max-width: $bp-small-to-medium) {
     font-size: 20px;
+    margin-top: 50px;
     margin-bottom: 0px;
 
     .size-medium:not(.size-small),
@@ -151,14 +158,17 @@ body #content-wrapper #content {
       height: 200px;
 
       #image, #name {
-        text-align: center;
         width: 100.0%;
+        text-align: center;
       }
       #image {
         img {
           border-radius: 15px;
           max-height: 200px;
         }
+      }
+      #name {
+        text-align: center;
       }
     }
     #links {
