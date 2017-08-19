@@ -5,6 +5,7 @@
     "gulp-clean-css": "^3.4.2",
     "gulp-imagemin": "^3.3.0",
     "gulp-pug": "^3.3.0",
-    "gulp-sass": "^3.1.0"
+    "gulp-sass": "^3.1.0",
+    "node-sass": "^4.5.3"
   }
 }

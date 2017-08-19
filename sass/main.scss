@@ -24,11 +24,17 @@ body {
       }
 
       #header {
+        #image, #name {
+          width: 100.0%;
+          text-align: center;
+        }
         #image img {
           border: 1px solid #444;
         }
         #name {
           font-weight: 900;
+          margin-top: 30px;
+          text-align: center;
 
           p {
             margin: 0;
@@ -82,19 +88,11 @@ body #content-wrapper #content {
     #header {
       height: 300px;
 
-      #image, #name {
-        width: 50.0%;
-      }
       #image {
         img {
           border-radius: 20px;
           max-height: 300px;
         }
-      }
-      #name {
-        margin-top: 140px;
-        width: 50.0%;
-        text-align: right;
       }
     }
     #links {
@@ -105,35 +103,29 @@ body #content-wrapper #content {
       }
     }
   }
-  @media (min-width: $bp-small-to-medium + 1px) and (max-width: $bp-medium-to-large) {
+  @media (max-width: $bp-medium-to-large) {
     font-size: 25px;
-    margin-top: 75px;
-
-    .size-small:not(.size-medium),
-    .size-large:not(.size-medium) {
-      display: none;
-    }
-    .row {
-      margin-bottom: 20px;
-    }
 
     #header {
       height: 200px;
 
-      #image, #name {
-        width: 100.0%;
-        text-align: center;
-      }
       #image {
         img {
           border-radius: 15px;
           max-height: 200px;
         }
       }
-      #name {
-        margin-top: 30px;
-        text-align: center;
-      }
+    }
+    .row {
+      margin-bottom: 20px;
+    }
+  }
+  @media (min-width: $bp-small-to-medium + 1px) and (max-width: $bp-medium-to-large) {
+    margin-top: 75px;
+
+    .size-small:not(.size-medium),
+    .size-large:not(.size-medium) {
+      display: none;
     }
     #links {
       .col {
@@ -142,34 +134,12 @@ body #content-wrapper #content {
     }
   }
   @media (max-width: $bp-small-to-medium) {
-    font-size: 20px;
     margin-top: 50px;
     margin-bottom: 0px;
 
     .size-medium:not(.size-small),
     .size-large:not(.size-small) {
       display: none;
-    }
-    .row {
-      margin-bottom: 20px;
-    }
-
-    #header {
-      height: 200px;
-
-      #image, #name {
-        width: 100.0%;
-        text-align: center;
-      }
-      #image {
-        img {
-          border-radius: 15px;
-          max-height: 200px;
-        }
-      }
-      #name {
-        text-align: center;
-      }
     }
     #links {
       .col {
