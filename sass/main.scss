@@ -101,9 +101,6 @@ body #content-wrapper #content {
       .col {
         width: 33.33%;
       }
-      .two .col {
-        width: 50%;
-      }
     }
   }
   @media (max-width: $bp-medium-to-large) {
@@ -133,6 +130,9 @@ body #content-wrapper #content {
     #links {
       .col {
         width: 50.00%;
+      }
+      .one .col {
+        width: 100%;
       }
     }
   }

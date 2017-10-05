@@ -10,6 +10,7 @@ mixin link(emoji, title, link)
         i.twa(class="twa-" + emoji)
         |  #{title}
 
+//- See: http://ellekasai.github.io/twemoji-awesome/
 mixin goodreads()
   +link("books", "Goodreads", "https://www.goodreads.com/user/show/40155956-colin-king")
 
@@ -33,3 +34,6 @@ mixin email()
 
 mixin twitter()
   +link("bird", "Twitter", "https://twitter.com/maydayitscolink")
+
+mixin keybase()
+  +link("key", "Keybase", "https://keybase.io/colinking")
